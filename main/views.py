@@ -9,7 +9,7 @@ from .forms import MD_Visualization_Form
 from django.core.files.storage import FileSystemStorage
 from django.contrib.auth.models import User
 
-from . import Main_MD_analysis
+from . import functions
 
 # Imaginary function to handle an uploaded file.
 # from .src.Main_MD_analysis import *
