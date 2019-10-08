@@ -469,6 +469,7 @@ class PCA_Components:
         #    sns.kdeplot(pc1, pc2, shade = True, n_levels = 75, cmap = "Oranges", ax = ax4)
 
         f.savefig(wd + file + '.png', pad_inches = 0)
+        return wd + file + '.png'
         plt.close()
         
     #FUNCTION DESCRIPTION    
@@ -520,6 +521,8 @@ class PCA_Components:
         plt.ylabel('PC2 - {0}%'.format(per_var[1]))
         plt.savefig(wd + file + '.png', pad_inches = 0)
         plt.close()
+
+        return (wd + file + '.png')
     
     #FUNCTION DESCRIPTION
     #Parameters:
@@ -585,6 +588,8 @@ class PCA_Components:
         for frame in frames:
             os.remove(wd + file + ' - Frame ' + f'{frame}' + '.png')
 
+        return 'media/Evolution of Conformation in PC Space.gif'
+
 class GMM_Clustering:
     #Plot all points in a color clustered PC graph
     #Parameters:
@@ -631,6 +636,8 @@ class GMM_Clustering:
         plt.yticks(())
         plt.title(title)
         plt.savefig(dirname + title + '.png')
+
+        return dirname + title + '.png'
     
     #Cluster PC points based on Gaussian Mixture Similarities
     #Parameters:

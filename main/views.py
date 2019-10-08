@@ -30,7 +30,7 @@ def md_analysis(request):
             visualization = form.cleaned_data["viz"]
             upload_file = form.cleaned_data["file"]
             handle_uploaded_file(request.FILES['file'])
-            Main_MD_analysis.md_vis(request.FILES['file'].name, analysis, visualization)
+            plt_path = functions.md_vis('media/'+request.FILES['file'].name, analysis, visualization)
             return render(request, 'main/md_analysis.html', locals())
     else:
         form = MD_Visualization_Form()

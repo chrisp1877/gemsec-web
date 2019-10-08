@@ -26,11 +26,13 @@ def md_vis(pdb_filepath, analysis, visualization):
       prep_var = np.round(pca[1].explained_variance_ratio_ * 100, decimals = 1)
 
       if visualization == "prob_map":
-         md.PCA_Components.PC_prob_map(pca[0], per_var=prep_var, wd= 'media/')
+         plt_path = md.PCA_Components.PC_prob_map(pca[0], per_var=prep_var, wd= 'media/')
       elif visualization == "pca_gif":
-         md.PCA_Components.gen_2d_PCA_gif(pca[0], per_var=prep_var, wd= 'media/')
+         plt_path = md.PCA_Components.gen_2d_PCA_gif(pca[0], per_var=prep_var, wd= 'media/')
       else:
-         md.PCA_Components.PC_den_plt(pca[0], 'media/')
+         plt_path = md.PCA_Components.PC_den_plt(pca[0], 'media/')
+
+      return "/" + plt_path
 
 
 

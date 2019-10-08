@@ -1,6 +1,15 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
+{% load static %}
+{% static "" as baseUrl %}
+
+<style>
+  .fit-image{
+    width: 100%;
+    object-fit: cover;
+}
+</style>
 <div class = "row">
   <div class = "col">
     <h2>MD Visualization</h2>
@@ -22,7 +31,11 @@
 </div>
 <div class="col">
   {% if submitted %}
-    <h2>Submitted!</h2>
+    <h5>Visualization plot:</h5>
+    <p><strong>Analysis:</strong> {{ analysis}};</p>
+    <p><strong>Visualization:</strong> {{ visualization }}</p>
+    <img src="{{ plt_path }}" class="img-responsive fit-image"/>
+    <p>{{ plt_path }}</p>
   {% endif %}
   <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-floppy-save"></span>Download Analysis</button>
   </div>
